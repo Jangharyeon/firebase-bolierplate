@@ -1,20 +1,14 @@
+'use strict';
+
 const { resolve } = require('path');
 const functions = require('firebase-functions');
 const express = require('express');
 const app = express();
-const expressHandlebars = require('express-handlebars');
 
-// 환경 변수
-const { PATHS } = require('./app-config');
+const handlebars = require('./server/lib/handlebars-instance');
 
 // [Set] handlebars engine
-const hbs = expressHandlebars.create({
-  defaultLayout: 'default',
-  layoutsDir: PATHS.LAYOUT_DIR,
-  partialsDir: PATHS.PARTIAL_DIR,
-  extname: 'hbs',
-});
-app.engine('hbs', hbs.engine);
+app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
 
 // [Set] Views
