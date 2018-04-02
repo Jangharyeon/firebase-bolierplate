@@ -1,0 +1,9 @@
+{
+  "name": "firebase-boilerplate",
+  "description": "set firebase & nodejs express & handlebars",
+  "scripts": {
+    "dev": "firebase serve --only functions,hosting",
+    "deploy": "firebase deploy"
+  },
+  "private": true
+}
