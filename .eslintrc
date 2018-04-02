@@ -4,11 +4,11 @@
     "jquery": true,
     "browser": true,
     "amd": true,
-    "commonjs": true,
+    "commonjs": true
   },
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module",
+    "sourceType": "module"
   },
   "globals": {
     "alert": false,
@@ -22,7 +22,7 @@
     "setInterval": false,
     "setTimeout": false,
     "window": false,
-    "XMLHttpRequest": false,
+    "XMLHttpRequest": false
   },
   "rules": {
     "camelcase": ["error", { "properties": "always" }],
@@ -78,6 +78,6 @@
     "no-const-assign": "error",
     "object-shorthand": "error",
     "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
-    "no-duplicate-imports": "error",
+    "no-duplicate-imports": "error"
   }
 }
