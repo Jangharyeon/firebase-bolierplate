@@ -19,13 +19,18 @@ exports.PATHS = {
   // root path
   BASE_DIR: BASEPATH,
 
-  VIEW_DIR: resolve(BASEPATH, 'src/templates', 'pages'),
+  // Javascript path
+  JS_DIR: resolve(BASEPATH, 'src/js'),
+
+  // View page path
+  VIEW_DIR: resolve(BASEPATH, 'src/templates'),
 
   // Handlebars layout path
   LAYOUT_DIR: resolve(BASEPATH, 'src/templates', 'layouts'),
 
   // Handlebars partial path
   PARTIAL_DIR: resolve(BASEPATH, 'src/templates', 'partials'),
+
   // Handlebars helper path
-  // LAYOUT_DIR: resolve(BASEPATH, 'src/templates', 'layouts'),
+  HELPER_DIR: resolve(BASEPATH, 'src/templates', 'helpers'),
 };

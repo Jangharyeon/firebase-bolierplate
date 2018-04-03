@@ -1,5 +1,6 @@
 'use strict';
 
+const { resolve } = require('path');
 const functions = require('firebase-functions');
 const express = require('express');
 const app = express();
@@ -12,7 +13,7 @@ app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
 
 // [Set] Views
-app.set('views', PATHS.VIEW_DIR);
+app.set('views', resolve(PATHS.VIEW_DIR, 'pages'));
 
 if (ENV === 'development') {
   const webpackMiddleware = require('./server/middleware/webpackMiddleware');
@@ -20,8 +21,10 @@ if (ENV === 'development') {
   app.use(webpackMiddleware);
 }
 
+require('./server/lib/handlebars-instance').reload();
+
 app.get('/', (req, res) => {
-  res.render('main');
+  res.render('main', { type: 'server' });
 });
 
 exports.app = functions.https.onRequest(app);
