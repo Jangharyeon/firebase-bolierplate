@@ -2,9 +2,11 @@
 
 const webpack = require('webpack');
 const { resolve } = require('path');
-const { PATHS } = require('./app-config');
+const { PATHS, ENV } = require('./app-config');
 
 module.exports = {
+  mode: ENV,
+
   entry: './src/js/index.js',
 
   output: {
@@ -22,12 +24,6 @@ module.exports = {
 
     modules: ['node_modules'],
   },
-
-  // externals: [
-  //   {
-  //     'jquery': 'jQuery',
-  //   },
-  // ],
 
   module: {
     rules: [
