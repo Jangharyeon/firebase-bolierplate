@@ -7,17 +7,19 @@ const { PATHS, ENV } = require('./app-config');
 module.exports = {
   mode: ENV,
 
-  entry: './src/js/index.js',
+  entry: {
+    main: resolve(PATHS.ENTRIES_DIR, 'main.js'),
+  },
 
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: resolve(__dirname, '..', 'assets/dist'),
   },
 
   resolve: {
     alias: {
-      'js': resolve(PATHS.JS_DIR),
-      'partials': resolve(PATHS.PARTIAL_DIR),
+      'js': PATHS.JS_DIR,
+      'partials': PATHS.PARTIAL_DIR,
     },
 
     extensions: ['.js', '.hbs'],

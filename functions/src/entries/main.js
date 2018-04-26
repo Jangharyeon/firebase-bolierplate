@@ -7,6 +7,6 @@ const tmpl = require('partials/mainSub');
 const x = 1000;
 const y = 20;
 
-$('body').append($(tmpl({ type: 'client' })));
+$('body').append($(tmpl({ type: 'client test' })));
 console.log('sum : ', calculation.sum(x, y));
 console.log('subtract : ', calculation.subtract(x, y));

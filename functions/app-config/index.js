@@ -19,6 +19,9 @@ exports.PATHS = {
   // root path
   BASE_DIR: BASEPATH,
 
+  // Entries path
+  ENTRIES_DIR: resolve(BASEPATH, 'src/entries'),
+
   // Javascript path
   JS_DIR: resolve(BASEPATH, 'src/js'),
 
