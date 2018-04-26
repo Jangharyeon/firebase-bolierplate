@@ -13,7 +13,7 @@ module.exports = {
 
   output: {
     filename: '[name].js',
-    path: resolve(__dirname, '..', 'assets/dist'),
+    path: resolve(PATHS.BASE_DIR, '..', 'assets/dist'),
   },
 
   resolve: {

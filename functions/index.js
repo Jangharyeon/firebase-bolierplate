@@ -23,8 +23,20 @@ if (ENV === 'development') {
 
 require('./server/lib/handlebars-instance').reload();
 
-app.get('/', (req, res) => {
-  res.render('main', { type: 'server' });
+app.get('/main', (req, res) => {
+  res.render('main', {
+    extra: {
+      page: req.originalUrl,
+    },
+    type: 'server',
+  });
+});
+
+app.get('*', (req, res) => {
+  // root 접근 시 /main으로 redirect
+  if (req.originalUrl === '/') {
+    return res.redirect('/main');
+  }
 });
 
 exports.app = functions.https.onRequest(app);
